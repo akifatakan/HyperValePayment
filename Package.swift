@@ -4,14 +4,14 @@
 import PackageDescription
 
 let package = Package(
-    name: "HyperVale",
+    name: "HyperValePayment",
     platforms: [
         .iOS(.v15)
     ],
     products: [
         .library(
-            name: "HyperVale",
-            targets: ["HyperVale"]
+            name: "HyperValePayment",
+            targets: ["HyperValePayment"]
         )
     ],
     dependencies: [
@@ -20,16 +20,16 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "HyperVale",
-            path: "Sources/HyperVale",
+            name: "HyperValePayment",
+            path: "Sources/HyperValePayment",
             resources: [
                 // If you later add bundled assets (e.g., localized strings)
             ]
         ),
         .testTarget(
-            name: "HyperValeTests",
-            dependencies: ["HyperVale"],
-            path: "Tests/HyperValeTests"
+            name: "HyperValePaymentTests",
+            dependencies: ["HyperValePayment"],
+            path: "Tests/HyperValePaymentTests"
         )
     ]
 )
