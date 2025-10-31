@@ -4,20 +4,32 @@
 import PackageDescription
 
 let package = Package(
-    name: "HyperValePayment",
+    name: "HyperVale",
+    platforms: [
+        .iOS(.v15)
+    ],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "HyperValePayment",
-            targets: ["HyperValePayment"]
-        ),
+            name: "HyperVale",
+            targets: ["HyperVale"]
+        )
+    ],
+    dependencies: [
+        // No external deps by default — keep it lightweight.
+        // Add Alamofire or a networking lib if you prefer.
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "HyperValePayment"
+            name: "HyperVale",
+            path: "Sources/HyperVale",
+            resources: [
+                // If you later add bundled assets (e.g., localized strings)
+            ]
         ),
-
+        .testTarget(
+            name: "HyperValeTests",
+            dependencies: ["HyperVale"],
+            path: "Tests/HyperValeTests"
+        )
     ]
 )
